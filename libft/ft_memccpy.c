@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rricki <rricki@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/31 18:53:17 by rricki            #+#    #+#             */
-/*   Updated: 2020/05/31 18:53:32 by rricki           ###   ########.fr       */
+/*   Created: 2020/05/31 21:56:10 by rricki            #+#    #+#             */
+/*   Updated: 2020/05/31 22:30:43 by rricki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-
-size_t	ft_strlen(const char *s)
+void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 {
-	size_t	i;
+	unsigned char	*dst;
+	unsigned char	*str;
+	unsigned char	cq;
+	size_t		i;
 
 	i = 0;
-	while(*s)
+	cq = (unsigned char)c;
+	str = (unsigned char *)src;
+	dst = (unsigned char *)dest;
+	while (i < n)
 	{
+		*dst++ = *str++;
+		if (*(str - 1) == cq)
+			return (dest);
 		i++;
-		s++;
 	}
-	return (i);
+	return (NULL);
 }

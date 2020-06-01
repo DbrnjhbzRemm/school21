@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rricki <rricki@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/31 18:53:17 by rricki            #+#    #+#             */
-/*   Updated: 2020/05/31 18:53:32 by rricki           ###   ########.fr       */
+/*   Created: 2020/05/31 21:10:20 by rricki            #+#    #+#             */
+/*   Updated: 2020/05/31 21:34:38 by rricki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-
-size_t	ft_strlen(const char *s)
+void	ft_bzero(void *s, size_t n)
 {
 	size_t	i;
 
 	i = 0;
-	while(*s)
+	while (i < n)
 	{
+		*(unsigned char *)s++ = '\0';
 		i++;
-		s++;
 	}
-	return (i);
 }
